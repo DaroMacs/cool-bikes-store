@@ -13,10 +13,7 @@ const ItemCount = ({counter, setCounter, stock, setStock}) => {
     }
     
     const handleSubtract = () => {
-        if(counter === 1 ){
-            alert('There should be at least 1 item')
-            return
-        }
+       
         setCounter( counter - 1)
         setStock(stock + 1)
     }
@@ -29,6 +26,7 @@ const ItemCount = ({counter, setCounter, stock, setStock}) => {
                 type='button' 
                 className='btn btn-danger btn-sm'
                 onClick={() => handleSubtract()}
+                disabled = {counter === 0}
                 >
                 -1
                 </button>
