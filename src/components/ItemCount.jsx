@@ -20,15 +20,17 @@ const ItemCount = ({counter, setCounter, stock, setStock}) => {
     console.log(counter, stock);
 
     return (
-        <div className='row'>
-            <div className='col-2 d-flex align-items-center justify-content-center'>
+        <div className="container p-0">
+       
+        <div className='row col-12'>
+            <div className='d-flex align-items-center justify-content-right'>
                 <button 
                 type='button' 
                 className='btn btn-danger btn-sm'
                 onClick={() => handleSubtract()}
                 disabled = {counter === 0}
                 >
-                -1
+                -
                 </button>
                 <h2 className='mb-0 px-4 border'>{counter}</h2>
                 <button 
@@ -36,12 +38,14 @@ const ItemCount = ({counter, setCounter, stock, setStock}) => {
                     className='btn btn-warning btn-sm'
                     onClick={() => handleAdd()}
                 >
-                +1
+                +
                 </button>
             </div>
-            <div className="row">
-                <h4 className='pt-2'>{`Available Stock ${stock}`}</h4>
+            <div className="container">
+                <h4 className='p-0 m-0 pt-2'>{`Available Stock ${stock}`}</h4>
             </div>
+        </div>
+             
         </div>
     )
 }
