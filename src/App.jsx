@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Products from "./pages/Products"
 import ErrorPage from "./pages/ErrorPage"
+import ProductsDetail from "./pages/ProductsDetail"
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home /> }/>
         <Route path='/about' element={<About /> }/>
         <Route path='/products' element={<Products /> }/>
+        <Route path='/products/:id' element={<ProductsDetail /> }/>
         <Route path='*' element={<ErrorPage /> }/>
       </Routes>
     </BrowserRouter>

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import ItemCount from './ItemCount';
 import '../styles/ItemCard.css'
+import { useNavigate } from 'react-router-dom';
 
 const ItemCard = ({product}) => {
 
+    const navigate = useNavigate()
+
     const [counter, setCounter] = useState(0)
     const [stock, setStock] = useState(5)
-    
     return (
 
       <div className="col-lg-4">
@@ -21,7 +23,10 @@ const ItemCard = ({product}) => {
                             setCounter = {setCounter}
                             stock = {stock}
                             setStock = {setStock}
-                        />                      
+                        />
+                        <div className="d-flex justify-content-center pt-2 ">
+                            <button type='button' className='btn btn-primary' onClick={() => navigate(`/products/${product.id}`)}>Detail</button>              
+                        </div>
                     </div>
                 </div>
             </div>

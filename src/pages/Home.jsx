@@ -10,7 +10,7 @@ const Home = () => {
                 <p className='mt-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora repellat iste id iusto, pariatur a architecto? Repellendus magnam rerum corporis magni asperiores fuga eligendi veniam inventore suscipit! Debitis, est accusantium.</p>
             </div>
             <div className="d-flex justify-content-center">
-                <Link aria-current="page" to='/products'><button type="button" class="btn btn-primary">Products</button></Link>
+                <Link aria-current="page" to='/products'><button type="button" className="btn btn-primary">Products</button></Link>
             </div>
         </div>    
     </div>
