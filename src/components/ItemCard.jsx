@@ -1,38 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCount from './ItemCount';
+import '../styles/ItemCard.css'
 
-const ItemCard = ({counter, setCounter, stock, setStock, item}) => {
-  return (
+const ItemCard = ({product}) => {
 
-    <div className='container'>
-        <div className="row">
-        <div className="col-6">
-                <div className="card mt-3">
-                <div className="card-body">
-                <h6>{`{{{Image Here ${item.image}}}}`}</h6>
-                <h5 className="card-title">{item.name}</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h6>{item.price}</h6>
-                    <div className="container p-0">
-                        <div className='col-12'>
-                            <div className="">
+    const [counter, setCounter] = useState(0)
+    const [stock, setStock] = useState(5)
+    
+    return (
 
+      <div className="col-lg-4">
+                <div className="card mt-3 border-dark">
+                    <div className="card-body">
+                        <img className="rounded mx-auto d-block" src={product.image} width={200} height={200} />
+                        <h5 className="card-title title pt-4 text-center">{product.title}</h5>
+                        <p className="card-text summary pt-2">{product.description}</p>
+                        <h5 className='text-center pb-2'>${product.price}</h5>
                         <ItemCount 
                             counter = {counter}
                             setCounter = {setCounter}
                             stock = {stock}
                             setStock = {setStock}
-                        />
-                            </div>
-                        </div>
-                    </div>
+                        />                      
                     </div>
                 </div>
             </div>
-        </div>
-        
-    </div>
-
   ) 
 };
 

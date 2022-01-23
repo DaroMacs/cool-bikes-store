@@ -1,25 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemCard from './ItemCard'
 
-const ItemListContainer = ({items}) => {
+const ItemListContainer = () => {
 
-    const [counter, setCounter] = useState(0)
-    const [stock, setStock] = useState(5)
+    const [products, setProducts] = useState([]);
 
-    console.log(items);
+    useEffect(async () => {
+    
+        try {
+            const url =  "https://fakestoreapi.com/products";
+            const response = await fetch(url)
+            const result = await response.json()
+            
+            setProducts(result)
+
+        } catch (error) {
+            console.log(error);
+        }
+        
+    
+    }, []);
+    
 
     return (
-        <div className='row'>
-            <div className="col-12 m-5">
-                
-                {items.map(item => (
+        <div className='container'>
+            <div className='row mt-3'>
+                {products.map(product => (
                     <ItemCard 
-                        key={item.id}
-                        item = {item}
-                        counter = {counter}
-                        setCounter = {setCounter}
-                        stock = {stock}
-                        setStock = {setStock}
+                        key={product.id}
+                        product = {product}                        
                     />
                     ))}                
             </div>

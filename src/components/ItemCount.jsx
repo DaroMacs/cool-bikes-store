@@ -9,7 +9,6 @@ const ItemCount = ({counter, setCounter, stock, setStock}) => {
         }
         setCounter( counter + 1)
         setStock(stock - 1)
-        // console.log(counter, stock);
     }
     
     const handleSubtract = () => {
@@ -17,35 +16,32 @@ const ItemCount = ({counter, setCounter, stock, setStock}) => {
         setCounter( counter - 1)
         setStock(stock + 1)
     }
-    console.log(counter, stock);
 
     return (
-        <div className="container p-0">
-       
-        <div className='row col-12'>
-            <div className='d-flex align-items-center justify-content-right'>
-                <button 
-                type='button' 
-                className='btn btn-danger btn-sm'
-                onClick={() => handleSubtract()}
-                disabled = {counter === 0}
-                >
-                -
-                </button>
-                <h2 className='mb-0 px-4 border'>{counter}</h2>
-                <button 
+        <div className="container p-0">       
+            <div className='row col-12 m-0'>
+                <div className='d-flex align-items-center justify-content-center'>
+                    <button 
                     type='button' 
-                    className='btn btn-warning btn-sm'
-                    onClick={() => handleAdd()}
-                >
-                +
-                </button>
-            </div>
-            <div className="container">
-                <h4 className='p-0 m-0 pt-2'>{`Available Stock ${stock}`}</h4>
-            </div>
-        </div>
-             
+                    className='btn btn-danger btn-sm me-1'
+                    onClick={() => handleSubtract()}
+                    disabled = {counter === 0}
+                    >
+                    -
+                    </button>
+                    <h4 className='mb-0 px-4 border rounded'>{counter}</h4>
+                    <button 
+                        type='button' 
+                        className='btn btn-warning btn-sm ms-1'
+                        onClick={() => handleAdd()}
+                    >
+                    +
+                    </button>
+                </div>
+            </div>             
+                <div className="row text-center">
+                    <h6 className='p-0 m-0 pt-2'>{`Available Stock ${stock}`}</h6>
+                </div>
         </div>
     )
 }
