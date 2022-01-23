@@ -46,7 +46,7 @@ const ProductsDetail = () => {
                           <h6 className='text-center pb-2'>Rate: {product.rating.rate}</h6>
                           <h5 className='text-center pb-2'>${product.price}</h5>
                           <div className="d-flex justify-content-center pt-2 ">
-                              <button type='button' className='btn btn-primary' onClick={() => navigate(`/products`)}>Return</button>              
+                              <button type='button' className='btn btn-warning' onClick={() => navigate(`/products`)}>Return</button>              
                           </div>
                       </div>
                   </div>
